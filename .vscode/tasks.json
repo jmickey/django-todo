@@ -1,0 +1,51 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Django Server",
+            "type": "shell",
+            "command": "${config:python.pythonPath}",
+            "args": [
+                "./manage.py",
+                "runserver"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Make Migrations",
+            "type": "shell",
+            "command": "${config:python.pythonPath}",
+            "args": [
+                "./manage.py",
+                "makemigrations"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Apply Migrations",
+            "type": "shell",
+            "command": "${config:python.pythonPath}",
+            "args": [
+                "./manage.py",
+                "migrate"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "command": "${config:python.pythonPath}",
+            "args": [
+                "./manage.py",
+                "test"
+            ],
+            "problemMatcher": [],
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
