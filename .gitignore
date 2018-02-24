@@ -2,7 +2,7 @@
 **/.vscode/*
 !./.vscode/task.json
 
-__pycache__/
+_pycache_/
 *.py[cod]
 
 .DS_Store
