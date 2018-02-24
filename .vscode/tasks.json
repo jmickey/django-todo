@@ -8,7 +8,7 @@
             "type": "shell",
             "command": "${config:python.pythonPath}",
             "args": [
-                "./manage.py",
+                "src/manage.py",
                 "runserver"
             ],
             "problemMatcher": []
@@ -18,7 +18,7 @@
             "type": "shell",
             "command": "${config:python.pythonPath}",
             "args": [
-                "./manage.py",
+                "src/manage.py",
                 "makemigrations"
             ],
             "problemMatcher": []
@@ -28,7 +28,7 @@
             "type": "shell",
             "command": "${config:python.pythonPath}",
             "args": [
-                "./manage.py",
+                "src/manage.py",
                 "migrate"
             ],
             "problemMatcher": []
@@ -38,7 +38,7 @@
             "type": "shell",
             "command": "${config:python.pythonPath}",
             "args": [
-                "./manage.py",
+                "src/manage.py",
                 "test"
             ],
             "problemMatcher": [],
