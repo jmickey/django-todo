@@ -37,8 +37,11 @@
             "label": "Test",
             "type": "shell",
             "command": "${config:python.pythonPath}",
+            "options": {
+                "cwd": "${workspaceFolder}/src"
+            },
             "args": [
-                "src/manage.py",
+                "manage.py",
                 "test"
             ],
             "problemMatcher": [],
