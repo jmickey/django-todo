@@ -24,3 +24,20 @@ body {
 .btn-full {
     width: 100%;
 }
+
+ h2, h3 {
+    padding-bottom: 0.5em;
+}
+
+.pad-right {
+    padding-right: 2px
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.flex-right {
+    margin-left: auto;
+}

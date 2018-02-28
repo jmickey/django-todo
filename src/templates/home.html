@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load todo_extras  %}
+
 {% block content %}
     <h1>To Do List</h1>
 
@@ -14,6 +16,59 @@
                     <input type="submit" value="Submit" class="btn btn-primary btn-full"/>
                 </div>
             </form>
+
+            <hr />
+
+            <h2>Current Tasks:</h2>
+
+            <div class="list-group">
+                {% for task in tasks|is_completed:False %}
+                    <div class="list-group-item list-group-item-action flex">
+                        {{ task.description }}
+                        <div class="flex-right pad-right">
+                            <form action="tasks/delete/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" value={{ task.id }} name="id" />
+                                <button type="submit" class="btn btn-sm btn-light">
+                                    X
+                                </button>
+                            </form>
+                        </div>
+                        <div>
+                            <form action="/tasks/complete/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" value={{ task.id }} name="id" />
+                                <button type="submit" class="btn btn-sm btn-light">
+                                    ✓
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                {% empty %}
+                    <strong>You have no incomplete tasks.</strong>
+                {% endfor %}
+            </div>
+            <hr />
+            <h3>Completed Tasks</h3>
+            <div class="list-group">
+
+                {% for task in tasks|is_completed:True %}
+                    <div class="list-group-item list-group-item-action flex">
+                        {{ task.description }}
+                        <span class="flex-right">
+                            <form action="tasks/delete/" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" value={{ task.id }} name="id" />
+                                <button type="submit" class="btn btn-sm btn-light">
+                                    X
+                                </button>
+                            </form>
+                        </span>
+                    </div>
+                {% empty %}
+                    <strong>You have not completed any tasks.</strong>
+                {% endfor %}
+            </div>
         </div>
     </div>
 {% endblock %}

@@ -16,3 +16,7 @@ class NewTaskForm(forms.ModelForm):
     class Meta:
         model = TaskItem
         fields = ["description"]
+
+
+class TaskActionForm(forms.Form):
+    id = forms.IntegerField(widget=widgets.HiddenInput())
