@@ -30,7 +30,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'django-terraform.urls'
+ROOT_URLCONF = 'django-todo.urls'
 
 TEMPLATES = [
     {
@@ -50,7 +50,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'django-terraform.wsgi.application'
+WSGI_APPLICATION = 'django-todo.wsgi.application'
 
 
 # Database
