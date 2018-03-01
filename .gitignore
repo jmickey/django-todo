@@ -6,3 +6,6 @@ _pycache_/
 *.py[cod]
 
 .DS_Store
+.env
+terraform/
+.ebextensions/
